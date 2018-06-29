@@ -24,6 +24,7 @@ if [ "$model" == "R1D" -o "$model" == "R2D" -o "$model" == "R3D"  ]; then
 	monlorpath="/etc/monlor"
 	CPU=arm
 elif [ "$model" == "R3" -o "$model" == "R3P" -o "$model" == "R3G" -o "$model" == "R1CM" ]; then
+	logsh $model
 	userdisk=$(df|awk '/\/extdisks\/sd[a-z][0-9]?$/{print $6;exit}')
 	logsh "【Tools】" "请选择安装方式(1.内置储存 2.外置储存 3.内存安装) " 
 	read res
